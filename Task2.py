@@ -1,53 +1,32 @@
-import random
-print(" Password Generator ")
-length = int(input("Enter the length of the password: "))
-complexity =  input("Enter the complexity of password as simple, moderate or difficult: ")
-pas=""
-if complexity == "simple":
-    for i in range(length):
-        s1 = random.randint(97,122)
-        pas+=chr(s1)
-elif complexity == "moderate":
-    for i in range(length-3):
-        s1= random.randint(97,122)
-        pas+=chr(s1)
-    for i in range(2):
-        s1 = ["@","!","&","$","%","#","*"]
-        s2= random.choice(s1)
-        pas+=s2
-    s1= random.randint(0,9)
-    pas+=str(s1)
-else:
-    v1 = length//2
-    v2 = length - v1
-    for i in range(1):
-        s1= random.randint(65,91)
-        pas+=chr(s1)
-    for i in range(v1-1):
-        s1= random.randint(97,122)
-        pas+=chr(s1)
-    s1 = ["@","!","&","$","%","#","*"]
-    s2= random.choice(s1)
-    pas+=s2
-    v2-=1
-    for i in range(v2//2):
-        s1= random.randint(0,9)
-        pas+=str(s1)
-    s1 = ["@","!","&","$","%","#","*"]
-    s2= random.choice(s1)
-    pas+=s2
-    fi_len = length - len(pas)
-    for i in range(fi_len):
-        s1= random.randint(97,122)
-        pas+=chr(s1)
-print("The password generated is:\n",pas)
-    
 
-
-
-
-    
-    
-
-
-
+print("*"*7+"  Welcome to Calculator  "+"*"*7)
+while True:
+    print()
+    print("For addition------- ---Type 1")
+    print("For subtraction------- Type 2")
+    print("For multipliaction---- Type 3")
+    print("For division---------- Type 4")
+    print("For exiting------------Type 5")
+    print()
+    choice=int(input("Enter your choice: "))
+    print()
+    if choice == 5:
+        print("Exiting the Calculator")
+        break
+    num1 = int(input("Enter the first number: "))
+    num2 = int(input("Enter the second number: "))
+    if choice == 1:
+        num3 = num1 + num2
+        print("The addition of %d and %d is %d" %(num1, num2, num3))
+    elif choice == 2:
+        num3 = num1 - num2
+        if num3 >= 0:
+            print("The subtraction of %d and %d is %d"  %(num1, num2, num3))
+        else:
+            print("The subtraction of %d and %d is %d"  %(num1, num2, -num3))
+    elif choice == 3:
+        num3 = num1 * num2
+        print("The multiplication of %d and %d is %d"  %(num1, num2, num3))
+    elif choice == 4:
+        num3 = num1 / num2
+        print("The division of %d and %d is %d"  %(num1, num2, num3))
